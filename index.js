@@ -25,7 +25,6 @@ app.get("/", (req, res) => {// O wildcard '*' serve para servir o mesmo index.ht
     res.sendFile(path.join(__dirname, configs.caminho, "index.html"));
 });
 
-app.use(express.static(path.resolve(__dirname, 'src', 'assets')));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cors());
