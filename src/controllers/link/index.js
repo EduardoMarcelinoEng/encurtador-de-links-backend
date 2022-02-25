@@ -37,7 +37,7 @@ router.post('/', async (req, res)=>{
         
         shortenedLink = `${req.hostname}
             ${req.protocol == 'http' 
-            ? (httpPort == 80 ? '' : `:${httpPort}`)
+            ? ([80, 3000].includes(httpPort) ? '' : `:${httpPort}`)
             : ''}
             /${req.baseUrl}${result}`;
             shortenedLink = shortenedLink.replace(/\s{1,}/g, '');
