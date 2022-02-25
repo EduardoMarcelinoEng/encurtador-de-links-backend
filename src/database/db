@@ -1,1 +1,1 @@
-{"$$indexCreated":{"expireAfterSeconds":0,"fieldName":"expirationDate"}}
+{"$$indexCreated":{"fieldName":"expirationDate","unique":false,"sparse":false}}

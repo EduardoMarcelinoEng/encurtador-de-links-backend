@@ -4,7 +4,7 @@ let httpsPort = '';
 
 switch(env){
     case 'develop':
-        httpPort = 8888;
+        httpPort = 3000;
     break;
     case 'production':
         httpPort = 80;
