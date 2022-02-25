@@ -7,8 +7,9 @@ const path = require('path');
 require('./src/cronJobs');
 
 const configs = {
-    caminho: "build", //caminho do frontend
-    forcarHTTPS: false
+    caminho: "build", //Aqui será definido a pasta de saída onde contém o index.html e os outros arquivos.
+    forcarHTTPS: false, //Defina para true se desejar que o redirecionamento para HTTPS seja forçado (é necessário certificado SSL ativo)
+    port: process.env.PORT || httpPort
 }
 
 if (configs.forcarHTTPS) //Se o redirecionamento HTTP estiver habilitado, registra o middleware abaixo
@@ -31,5 +32,5 @@ app.use(cors());
 
 app.use('/link', linkController);
 
-app.listen(httpPort, ()=>
-    console.log(`Ambiente de ${env=='develop' ? 'desenvolvimento' : 'produção'} rodando na porta ${httpPort}`));
+app.listen(configs.port, ()=>
+    console.log(`Ambiente de ${env=='develop' ? 'desenvolvimento' : 'produção'} rodando na porta ${configs.port}`));
