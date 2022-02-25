@@ -15,7 +15,7 @@ const configs = {
 if(configs.forcarHTTPS){
     app.use((req, res, next) => { //Cria um middleware onde todas as requests passam por ele
         //Checa se o protocolo informado nos headers é HTTP
-        if(!req.secure) return res.status(301).redirect(`https://${req.headers.host}${req.url}`); //Redireciona pra HTTPS
+        if(req.protocol === "http") return res.status(301).redirect(`https://${req.headers.host}${req.url}`); //Redireciona pra HTTPS
         else next(); //Não precisa redirecionar, passa para os próximos middlewares que servirão com o conteúdo desejado
     });
 }
