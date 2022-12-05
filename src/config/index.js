@@ -7,7 +7,7 @@ switch(env){
         httpPort = 3000;
     break;
     case 'production':
-        httpPort = 80;
+        httpPort = 8080;
         httpsPort = 443;
 }
 
