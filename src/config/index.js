@@ -1,4 +1,4 @@
-const env = 'production';
+const env = 'develop';
 let httpPort = '';
 let httpsPort = '';
 
