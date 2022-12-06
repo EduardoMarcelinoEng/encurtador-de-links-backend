@@ -1,13 +1,13 @@
-const env = 'production';
+const env = 'develop';
 let httpPort = '';
 let httpsPort = '';
 
 switch(env){
     case 'develop':
-        httpPort = 3000;
+        httpPort = 80;
     break;
     case 'production':
-        httpPort = 8080;
+        httpPort = 80;
         httpsPort = 443;
 }
 
